@@ -5,7 +5,9 @@
 
 
 function t1() {
-
+  for (let i = 1; i <= 50; i++) {
+    document.querySelector(`.out-1`).textContent += `${i} `;
+  }
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -16,6 +18,10 @@ document.querySelector('.b-1').onclick = t1;
 // от 2 до 122 c шагом 2. Разделитель - пробел. Задача решается с помощью цикла.
 
 function t2() {
+  for (let i = 2; i < 123; i = i + 2) {
+    document.querySelector(`.out-2`).textContent += `${i} `;
+
+  }
 
 }
 
@@ -28,7 +34,9 @@ document.querySelector('.b-2').onclick = t2;
 // от 25 до 7 c шагом 1. Разделитель - пробел. Задача решается с помощью цикла.
 
 function t3() {
-
+  for (let i = 25; i > 6; i--) {
+    document.querySelector(`.out-3`).textContent += `${i} `;
+  }
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -40,7 +48,9 @@ document.querySelector('.b-3').onclick = t3;
 
 
 function t4() {
-
+  for (let i = 77; i > 34; i = i - 3) {
+    document.querySelector(`.out-4`).textContent += `${i}_`;
+  }
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -52,6 +62,15 @@ document.querySelector('.b-4').onclick = t4;
 // от 1 до 17 c шагом 1. Разделитель - знак подчеркивания и звездочка (если число нечетное, и две звездочки если четное). Задача решается с помощью цикла.
 
 function t5() {
+  for (let i = 1; i < 18; i++) {
+
+    if (i % 2 == 0) {
+      document.querySelector(`.out-5`).textContent += `${i}_**`;
+    } else {
+      document.querySelector(`.out-5`).textContent += `${i}_*`;
+    }
+
+  }
 
 }
 
@@ -69,7 +88,12 @@ document.querySelector('.b-5').onclick = t5;
 //
 
 function t6() {
-
+  let value = document.querySelector(`.i-6`).value;
+  console.log(value);
+  let str = `******<br>`;
+  for (let i = 0; i < value; i++) {
+    document.querySelector(`.out-6`).innerHTML += str;
+  }
 }
 
 document.querySelector('.b-6').onclick = t6;
@@ -77,13 +101,17 @@ document.querySelector('.b-6').onclick = t6;
 
 //  Task 7
 // Есть input i-7 куда пользователь может ввести число больше нуля (проверок не делаем, принимаем как факт).
-// По нажатию кнопки b-7 должна запускаться функция t7, которая выводит в out-7 числа от введенного пользователем до нуля включительно.
+// По нажатию кнопки b-7 должна запускаться функция t7, которая выводит в 
+// out-7 числа от введенного пользователем до нуля включительно.
 // Разделитель пробел. Если пользователь ввел 4 и нажал кнопку, мы получим:
 //     4 3 2 1 0
 // Задача решается с помощью цикла.
 
 function t7() {
-
+  let startvalue = document.querySelector(`.i-7`).value;
+  for (let i = startvalue; i >= 0; i--) {
+    document.querySelector(`.out-7`).textContent += `${i} `;
+  }
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -98,7 +126,11 @@ document.querySelector('.b-7').onclick = t7;
 // Задача решается с помощью цикла.
 
 function t8() {
-
+  let startvalue = document.querySelector(`.i-81`).value;
+  let endvalue = document.querySelector(`.i-82`).value;
+  for (let i = startvalue; i <= endvalue; i++) {
+    document.querySelector(`.out-7`).textContent += `${i} `;
+  }
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -114,8 +146,22 @@ document.querySelector('.b-8').onclick = t8;
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл.
 // цикл - один
 
-function t9() {
 
+
+function t9() {
+  let startvalue = document.querySelector(`.i-91`).value;
+  let endvalue = document.querySelector(`.i-92`).value;
+  if (startvalue > endvalue) {
+    let temp = startvalue;
+    startvalue = endvalue;
+    endvalue = temp;
+  }
+
+  console.log(startvalue);
+
+  for (let i = startvalue; i <= endvalue; i++) {
+    document.querySelector(`.out-9`).textContent += `${i} `;
+  }
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -126,7 +172,9 @@ document.querySelector('.b-9').onclick = t9;
 // Разделитель - пробел. Задача решается через цикл, а четность - через шаг (равный 2).
 
 function t10() {
-
+  for (let i = 1950; i < 2001; i = i + 2) {
+    document.querySelector(`.out-10`).textContent += i;
+  }
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -141,7 +189,10 @@ document.querySelector('.b-10').onclick = t10;
 
 
 function t11() {
-
+  let value = document.querySelectorAll(`.div-11`);
+  for (let i = 0; i < value.length; i++) {
+    document.querySelector(`.out-11`).textContent += `${value[i].innerHTML} `;
+  }
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -154,7 +205,10 @@ document.querySelector('.b-11').onclick = t11;
 
 
 function t12() {
-
+  let value = document.querySelectorAll(`.div-12`);
+  for (let i = 0; i < value.length; i++) {
+    value[i].style.background = `orange`;
+  }
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -166,7 +220,10 @@ document.querySelector('.b-12').onclick = t12;
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
 function t13() {
-
+  let value = document.querySelectorAll(`.i-13`);
+  for (let i = 0; i < value.length; i++) {
+    value[i].value = i + 1;
+  }
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -179,7 +236,12 @@ document.querySelector('.b-13').onclick = t13;
 
 
 function t14() {
-
+  let value = document.querySelectorAll(`.i-14`);
+  for (let i = 0; i < value.length; i++) {
+    if (value[i].checked) {
+      document.querySelector(`.out-14`).textContent = value[i].value;
+    }
+  }
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -191,7 +253,9 @@ document.querySelector('.b-14').onclick = t14;
 // Подсказка (10 - i) + ' ' + i
 
 function t15() {
-
+  for (let i = 10, j = 0; i >= 0; i--, j++) {
+    document.querySelector(`.out-15`).textContent += `${i} ${j} `;
+  }
 }
 
 document.querySelector('.b-15').onclick = t15;
