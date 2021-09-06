@@ -259,6 +259,15 @@ document.querySelector('.b-9').onclick = t9;
 let out10 = document.querySelector(`.out-10`);
 
 function t10() {
-
+  for (let i = 1, j = 0; i <= 5; i++, j++) {
+    for (let k = 1; k <= 10; k++) {
+      if (k < 10) {
+        out10.innerHTML += `${j}${k} `;
+      } else {
+        out10.innerHTML += `${i}` * `${k}`;
+      }
+    }
+    out10.innerHTML += `<br>`;
+  }
 }
 document.querySelector('.b-10').onclick = t10;
