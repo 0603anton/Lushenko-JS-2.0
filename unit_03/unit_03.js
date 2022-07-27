@@ -161,14 +161,22 @@ document.querySelector(".b-9").onclick = f9;
 // Task 10
 // Дан select s-100. По нажатию кнопки, выведите value выбранного option в out-10.
 
-function f10() {}
+const select100 = document.querySelector(`.s-100`);
+const out10 = document.querySelector(`.out-10`);
+
+function f10() {
+  out10.textContent = select100.value;
+}
 
 document.querySelector(".b-10").onclick = f10;
 
 // Task 11
 // Дан select s-110. По изменению состояния select (событие onchange) выведите value выбранного option в out-11.
-
-function f11() {}
+const select110 = document.querySelector(`.s-110`);
+const out11 = document.querySelector(`.out-11`);
+function f11() {
+  out11.textContent = select110.value;
+}
 
 document.querySelector(".s-110").onchange = f11;
 
@@ -187,20 +195,63 @@ document.querySelector(".b-12").onclick = f12;
 // Task 13
 // Дан input i-130. В отличие от предыдущего задания - input type number. По нажатию кнопки получите значение из input  в переменную, а затем выведите в out-13 typeof полученной переменной. Typeof позволяет определить тип данных. Если вы правильно все сделали - то удивительно, но тип данных будет string! Подумайте почему так?
 
-function f13() {}
+const input13 = document.querySelector(`.i-130`);
+const out13 = document.querySelector(`.out-13`);
+
+function f13() {
+  let t13 = input13.value;
+  out13.textContent = typeof t13;
+}
 
 document.querySelector(".b-13").onclick = f13;
 
 // Task 14
 // Дан input i-141 и input-142, type=number.  Дан select s-143, который содержит две операции - +, -, *, / . Дана кнопка b-14, при нажатии на которую срабатывает функция f14. Функция выводит в out-14 результат операций выбранной в 3-м select к числам введенным в первом и втором input. Например выбрано 1 13 +, нужно вывести результат операции 1+13 т.е.  14.
 
-function f14() {}
+const input141 = document.querySelector(`.i-141`);
+const input142 = document.querySelector(`.i-142`);
+const select14 = document.querySelector(`.s-143`);
+const out14 = document.querySelector(`.out-14`);
+
+function f14() {
+  let i141 = input141.value;
+  let i142 = input142.value;
+  let s14 = select14.value;
+  out14.innerHTML = eval(`${i141}${s14}${i142}`);
+}
 
 document.querySelector(".b-14").onclick = f14;
+
+// function f14() {
+//     let a = +document.querySelector(`.i-141`).value;
+//     let b = +document.querySelector(`.i-142`).value;
+//     let c = document.querySelector(`.s-143`).value;
+
+//     if (c == `+`) {
+//         document.querySelector(`.out-14`).textContent = a + b;
+//     } else if (c == `-`) {
+//         document.querySelector(`.out-14`).textContent = a - b;
+//     } else if (c == `*`) {
+//         document.querySelector(`.out-14`).textContent = a * b;
+//     } else if (c == `/`) {
+//         document.querySelector(`.out-14`).textContent = a / b;
+//     }
 
 // Task     15
 // Дан select s-151 и s-152, каждый из которых содержит 1 и 0.  Дан select s-153, который содержит две операции - && и || . Дана кнопка b-15, при нажатии на которую срабатывает функция f15. Функция выводит в out-15 результат логических операций выбранных в 3 select к числам выбранным в первом и втором select. Например выбрано 1 1 &&, нужно вывести результат операции 1&&1 т.е. 1 или 0.
 
-function f15() {}
+const out15 = document.querySelector(`.out-15`);
+
+function f15() {
+  let a = +document.querySelector(`.s-151`).value;
+  let b = +document.querySelector(`.s-152`).value;
+  let c = document.querySelector(`.s-153`).value;
+
+  if (c == `&&`) {
+    out15.textContent = Number(a && b);
+  } else {
+    out15.textContent = Number(a || b);
+  }
+}
 
 document.querySelector(".b-15").onclick = f15;
