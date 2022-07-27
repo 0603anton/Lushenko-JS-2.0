@@ -71,73 +71,129 @@ document.querySelector(".b-9").onclick = t9;
 // Task 10.
 // Создайте input и кнопку. По нажатию на кнопку выполняется функция, которая выводит на страницу число, которое ввел пользователь умноженное на 10.
 
-function t10() {}
+const input10 = document.querySelector(`.i-10`);
+const out10 = document.querySelector(`.out-10`);
+
+function t10() {
+  out10.textContent = input10.value * 10;
+}
 
 document.querySelector(".b-10").onclick = t10;
 
 // Task 11.
 // Создайте input и кнопку. По нажатию на кнопку выполняется функция, которая выводит на страницу в .out-11 число, которое ввел пользователь и к нему добавленное число 10.
 
-function t11() {}
+const input11 = document.querySelector(`.i-11`);
+const out11 = document.querySelector(`.out-11`);
+
+function t11() {
+  out11.textContent = +input11.value + 10;
+}
 
 document.querySelector(".b-11").onclick = t11;
 
 // Task 12.
 // Создайте два input (i-12_1 и i-12-2) и кнопку. В первый input пользователь вводит имя, во второе фамилию. При нажатии кнопки выполняется функция, которая выводит в .out-12 строку 'Hello имя фамилия', где имя - имя пользователя и фамилия - введенная фамилия.
 
-function t12() {}
+const name = document.querySelector(`.i-12_1`);
+const surname = document.querySelector(`.i-12_2`);
+const out12 = document.querySelector(`.out-12`);
+
+function t12() {
+  out12.textContent = `Hello ${name.value} ${surname.value}`;
+}
 
 document.querySelector(".b-12").onclick = t12;
 
 // Task 13.
 // Создайте два input и кнопку. В input пользователь вводит числа. При нажатии кнопки выполняется функция, которая выводит сумму данных двух чисел на страницу в .out-13.
 
-function t13() {}
+const digit1 = document.querySelector(`.i-13_1`);
+const digit2 = document.querySelector(`.i-13_2`);
+const out13 = document.querySelector(`.out-13`);
+
+function t13() {
+  out13.textContent = +digit1.value + +digit2.value;
+}
 
 document.querySelector(".b-13").onclick = t13;
 
 // Task 14.
 // Создайте input .i-14 и пропишите ему в html value = 77. С помощью JS измените value на 'Hello'.
 
-// document.querySelector('.i-14').value =
+document.querySelector(".i-14").value = `Hello`;
 
 // Task 15.
 // Создайте input i-15 и получите его в переменную y. В js выполните следующее присвоение: y.style.border = '2px solid red' . Изучите результат операции.
 
-// let y =
-// y.style.border =
+let y = document.querySelector(`.i-15`);
+y.style.border = "2px solid red";
 
 // Task 16.
 // Создайте два input type=number, куда пользователь может ввести числа. Выведите на страницу сумму данных чисел по нажатию кнопки b-16
 
-function t16() {}
+const number1 = document.querySelector(`.i-16-1`);
+const number2 = document.querySelector(`.i-16-2`);
+const out16 = document.querySelector(`.out-16`);
+
+function t16() {
+  out16.textContent = +number1.value + +number2.value;
+}
 
 document.querySelector(".b-16").onclick = t16;
 
 // Task 17.
 // Создайте input type="text" куда пользователь может ввести строку и число. Создайте функцию, которая запускается по нажатию на кнопку. Получите значение из input в переменную t. А затем сделайте операцию t = parseInt(t), и результат операции выведите в out-17. Прочитайте за эту операцию. Попробуйте по очереди вводить 44, 44aaa, 44.3, a45 . Изучите вывод.
 
-function t17() {}
+const inpu17 = document.querySelector(`.i-17`);
+const out17 = document.querySelector(`.out-17`);
+
+function t17() {
+  let t = inpu17.value;
+  t = parseInt(t, 10);
+  out17.textContent = t;
+}
 
 document.querySelector(".b-17").onclick = t17;
 
 // Task 18.
 // Создайте input type="text" куда пользователь может ввести строку и число. Создайте функцию, которая запускается по нажатию на кнопку. Получите значение из input в переменную t. А затем сделайте операцию t = parseFloat(t), и результат операции выведите в консоль. Прочитайте за эту операцию. Попробуйте по очереди вводить 44, 44aaa, 44.3, a45 . Изучите вывод.
 
-function t18() {}
+const inpu18 = document.querySelector(`.i-18`);
+const out18 = document.querySelector(`.out-18`);
+
+function t18() {
+  let t18 = inpu18.value;
+  t18 = parseFloat(t18);
+  out18.textContent = t18;
+}
 
 document.querySelector(".b-18").onclick = t18;
 
 // Task 19.
 // Создайте два input type=number, куда пользователь может ввести отрицательные числа. Выведите на страницу сумму данных чисел. Мы это делали! Зачем? Затем, что нужно понимать как влияет перевод в число с помощью + и parseInt на отрицательные числа!!!
 
-function t19() {}
+const input191 = document.querySelector(`.i-19-1`);
+const input192 = document.querySelector(`.i-19-2`);
+const out19 = document.querySelector(`.out-19`);
+
+function t19() {
+  out19.textContent = +input191.value - parseInt(input192.value);
+  // out19.textContent = +input191.value;
+  // out19.textContent += parseInt(input192.value);
+}
 
 document.querySelector(".b-19").onclick = t19;
 
 // Task 20
 // Создайте опросник, куда пользователь может ввести имя, фамилию, возраст, род занятий. И кнопку. По нажатию кнопки выведите на страницу предложение 'Уважаемый Иван, Иванов, ваш возраст 33 года, по професси вы ...' куда поставьте соответствующие данные из inputов.
-
-function t20() {}
+const name20 = document.querySelector(`.name20`);
+const surname20 = document.querySelector(`.surname20`);
+const job20 = document.querySelector(`.job20`);
+const age20 = document.querySelector(`.age20`);
+const out20 = document.querySelector(`.out-20`);
+function t20() {
+  out20.textContent = `Уважаемый ${name20.value}, ${surname20.value}, your age ${age20.value} years old, your job is ${job20.value}`;
+}
 
 document.querySelector(".b-20").onclick = t20;
