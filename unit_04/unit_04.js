@@ -233,7 +233,13 @@ document.querySelector(".s-18").onchange = f18;
 // Task 19
 // Создайте форму. В ней input(text).i-191 и input(password).i-192 - и кнопку button.b-19. По нажатию кнопки выводите значение text и password в out-19 через пробел. Обратите внимание на хитрость. Мы, кнопку сейчас повесили за пределами формы. Чуть позже мы рассмотрим почему это делали.
 
-function f19() {}
+const i191 = document.querySelector(`.i-191`);
+const i192 = document.querySelector(`.i-192`);
+const out19 = document.querySelector(`.out-19`);
+
+function f19() {
+  out19.textContent = `${i191.value} ${i192.value}`;
+}
 
 document.querySelector(".b-19").onclick = f19;
 
