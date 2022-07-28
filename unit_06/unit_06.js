@@ -71,7 +71,17 @@ document.querySelector(".b-3").onclick = t3;
 // <pre>
 // 1_1 2 3 4 5 2_1 2 3 4 5 3_1 2 3 4 5
 // </pre>
-function t4() {}
+function t4() {
+  const out4 = document.querySelector(`.out-4`);
+  let out = ``;
+  for (let i = 1; i < 4; i++) {
+    out += `${i}_`;
+    for (let j = 1; j < 6; j++) {
+      out += j + ` `;
+    }
+  }
+  out4.innerHTML = out;
+}
 
 document.querySelector(".b-4").onclick = t4;
 
@@ -83,7 +93,14 @@ document.querySelector(".b-4").onclick = t4;
 // 101010
 // </pre>
 // <p>Внешний цикл выводит перенос строки br. Вложенный цикл от 0 до 6 выводит либо 0 либо 1.</p>
-function t5() {}
+function t5() {
+  for (let i = 0; i < 3; i++) {
+    for (let k = 0; k < 3; k++) {
+      out5.innerHTML += "10";
+    }
+    out5.innerHTML += `<br>`;
+  }
+}
 
 document.querySelector(".b-5").onclick = t5;
 
