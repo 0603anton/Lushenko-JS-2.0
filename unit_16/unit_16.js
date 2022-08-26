@@ -79,7 +79,13 @@ let a6 = [
   [5, 6],
 ];
 
-function f6() {}
+function f6() {
+  let out = document.querySelector(`.out-6`);
+  a6 = [].concat(...a6);
+  for (let elem of a6) {
+    out.textContent += elem + ` `;
+  }
+}
 
 document.querySelector(".b-6").addEventListener("click", f6);
 
@@ -91,7 +97,14 @@ let a7 = [
   { id: 45, name: "Petr" },
 ];
 
-function f7() {}
+function f7() {
+  let result = {};
+  for (const iterator of a7) {
+    // console.log(iterator[id]);
+    result[iterator[`id`]] = iterator[`name`];
+  }
+  return result;
+}
 
 document.querySelector(".b-7").addEventListener("click", () => {
   console.log(f7());
@@ -105,7 +118,13 @@ let a8 = [
   { id: 45, name: "Petr" },
 ];
 
-function f8() {}
+function f8() {
+  let result = [];
+  for (const iterator of a8) {
+    result.push(iterator[id]);
+  }
+  return result;
+}
 
 document.querySelector(".b-8").addEventListener("click", () => {
   console.log(f8());
@@ -120,7 +139,15 @@ let a9 = [
   [0, 0, 0, 0, 0],
 ];
 
-function f9() {}
+function f9() {
+  let maxIndex = 0;
+  for (let elem of a9) {
+    if (elem.length > maxIndex) {
+      maxIndex = elem.length - 1;
+    }
+  }
+  return maxIndex;
+}
 
 document.querySelector(".b-9").addEventListener("click", () => {
   document.querySelector(".out-9").innerHTML = f9();
@@ -131,7 +158,13 @@ document.querySelector(".b-9").addEventListener("click", () => {
 
 let a10 = [4, 6, 9, "Hello"];
 
-function f10() {}
+function f10() {
+  let result = {};
+  for (const iterator of a10) {
+    result[iterator] = iterator;
+  }
+  return result;
+}
 
 document.querySelector(".b-10").addEventListener("click", () => {
   console.log(f10());
@@ -147,7 +180,15 @@ let a11 = {
   four: 0,
 };
 
-function f11() {}
+function f11() {
+  let out = document.querySelector(`.out-11`);
+  for (let elem in a11) {
+    console.log(a11[elem]);
+    if (a11[elem] > 10) {
+      out.textContent += a11[elem] + `  `;
+    }
+  }
+}
 
 document.querySelector(".b-11").addEventListener("click", f11);
 
@@ -156,7 +197,12 @@ document.querySelector(".b-11").addEventListener("click", f11);
 
 let a12 = [4, 5, 6, 7];
 
-function f12() {}
+function f12() {
+  let out = document.querySelector(`.out-12`);
+  for (const iterator of a12) {
+    out.textContent += iterator + ` `;
+  }
+}
 
 document.querySelector(".b-12").addEventListener("click", f12);
 
@@ -164,8 +210,14 @@ document.querySelector(".b-12").addEventListener("click", f12);
 //При нажатии .b-13 выполняете функцию f13. Функция должна c помощью for of перебрать a13 и вывести по символу в out-13 через пробел.
 
 let a13 = "testone";
-
-function f13() {}
+a13 = [...a13];
+function f13() {
+  console.log(a13);
+  let out = document.querySelector(`.out-13`);
+  for (const iterator of a13) {
+    out.textContent += iterator + ` `;
+  }
+}
 
 document.querySelector(".b-13").addEventListener("click", f13);
 
@@ -174,13 +226,23 @@ document.querySelector(".b-13").addEventListener("click", f13);
 
 let a14 = new Set([4, 5, 6]);
 
-function f14() {}
+function f14() {
+  let out = document.querySelector(`.out-14`);
+  for (const iterator of a14) {
+    out.textContent += iterator + ` `;
+  }
+}
 
 document.querySelector(".b-14").addEventListener("click", f14);
 
 // Task 15
 //При нажатии .b-15 выполняете функцию f15. Функция должна получить NodeList элементов .out-15 c помощью document.querySelectorAll, затем c помощью for of перебрать полученную коллекцию элементов .out-15 записать внутрь них число 15 ( затерев содержимое).
 
-function f15() {}
+function f15() {
+  let out = document.querySelectorAll(`.out-15`);
+  for (const iterator of out) {
+    iterator.textContent = 15;
+  }
+}
 
 document.querySelector(".b-15").addEventListener("click", f15);
