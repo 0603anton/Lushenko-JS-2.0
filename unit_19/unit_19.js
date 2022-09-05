@@ -41,50 +41,86 @@ function t3() {
 div3.addEventListener(`click`, t3);
 // Task 4 ============================================
 /*  Добавьте на блок .div-4 событие двойной клик и по двойному клику запуск функции t4. Функция должна возвращать и выводить на экран содержимое блока (только текст). Вывод осуществляется в out-4. */
-
-function t4() {}
+let div4 = document.querySelector(`.div-4`);
+div4.addEventListener(`dblclick`, t4);
+function t4() {
+  let out = document.querySelector(`.out-4`);
+  out.textContent = div4.textContent;
+}
 
 // ваше событие здесь!!!
 
 // Task 5 ============================================
 /*  Дан блок .div-5.active. Добавьте на него событие двойной клик, по которому удалется класс active если он есть и добавляется если такого класса нет. */
-
-function t5() {}
+let div5 = document.querySelector(`.div-5`);
+div5.addEventListener(`dblclick`, t5);
+function t5() {
+  div5.classList.toggle(`active`);
+}
 
 // ваше событие здесь!!!
 
 // Task 6 ============================================
 /*  Дан блок .div-6 и список .ul-6. При двойном клике на блоке скрывайте .ul-6 еcли он показан и показывайте если скрыт. Скрытие и показ делайте через добавление - удаление класса .hide */
 
-function t6() {}
+let div6 = document.querySelector(`.div-6`);
+div6.addEventListener(`dblclick`, t6);
+function t6() {
+  document.querySelector(`.ul-6`).classList.toggle(`hide`);
+}
 
 // ваше событие здесь!!!
 
 // Task 7 ============================================
 /*  Дан блок .div-7. При клике правой кнопкой мыши на блоке добавляйте ему класс .active. При повторном клике - удаляйте. */
 
-function t7() {}
+let div7 = document.querySelector(`.div-7`);
+div7.addEventListener(`contextmenu`, t7);
+function t7() {
+  div7.classList.toggle(`active`);
+}
 
 // ваше событие здесь!!!
 
 // Task 8 ============================================
 /*  Дано checkbox .ch-8. Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
 
-function t8() {}
+let ch8 = document.querySelector(`.ch-8`);
+ch8.addEventListener(`click`, t8);
+function t8() {
+  if (ch8.checked) {
+    document.oncontextmenu = function () {
+      return false;
+    };
+  } else {
+    document.oncontextmenu = null;
+  }
+}
 
 // ваше событие здесь!!!
 
 // Task 9 ============================================
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
 
-function t9() {}
+let div9 = document.querySelector(`.div-9`);
+div9.addEventListener(`contextmenu`, t9);
+let img = document.querySelector(`.div-9>img`);
+function t9() {
+  img.setAttribute(`src`, `img/2.png`);
+}
 
 // ваше событие здесь!!!
 
 // Task 10 ============================================
 /*  Дан блок .div-10. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. */
 
-function t10() {}
+let div10 = document.querySelector(`.div-10`);
+div10.addEventListener(`mouseenter`, t10);
+
+function t10() {
+  let img = document.querySelector(`.div-10>img`);
+  img.setAttribute(`src`, `img/2.png`);
+}
 
 // ваше событие здесь!!!
 
